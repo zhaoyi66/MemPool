@@ -100,7 +100,7 @@ ngx_create_pool(size_t size, ngx_log_t *log)
 
 
 
-![image-20221007152135762](F:\C-C++linux服务器开发\C++项目\nginx_mempool\image\image-20221007152135762.png)
+![image-20221007152135762](https://github.com/zhaoyi66/MemPool/blob/main/image/image-20221007152135762.png)
 
 
 
