@@ -163,7 +163,7 @@ ngx_palloc_small(ngx_pool_t *pool, size_t size, ngx_uint_t align)
 }
 ~~~
 
-![image-20221007154747701](F:\C-C++linux服务器开发\C++项目\nginx_mempool\image\image-20221007154747701.png)
+![image-20221007154747701](https://github.com/zhaoyi66/MemPool/blob/main/image/image-20221007154747701.png)
 
 
 
@@ -210,7 +210,7 @@ ngx_palloc_block(ngx_pool_t *pool, size_t size)
 */
 ~~~
 
-![image-20221007162555999](F:\C-C++linux服务器开发\C++项目\nginx_mempool\image\image-20221007162555999.png)
+![image-20221007162555999](https://github.com/zhaoyi66/MemPool/blob/main/image/image-20221007162555999.png)
 
 
 
@@ -269,7 +269,7 @@ ngx_palloc_large(ngx_pool_t *pool, size_t size)
 
 
 
-![image-20221008170526784](F:\C-C++linux服务器开发\C++项目\nginx_mempool\image\image-20221008170526784.png)
+![image-20221008170526784](https://github.com/zhaoyi66/MemPool/blob/main/image/image-20221008170526784.png)
 
 
 
