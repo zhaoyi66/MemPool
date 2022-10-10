@@ -182,7 +182,7 @@ __default_alloc_template<__threads, __inst>::_S_refill(size_t __n)
 }
 ~~~
 
-![image-20221001163232173](F:\C-C++linux服务器开发\C++项目\image\image-20221001163232173.png)
+![image-20221001163232173](https://github.com/zhaoyi66/MemPool/blob/main/image/image-20221001163232173.png)
 
 总的来说:chunk指向S_chunk_alloc开辟的一块连续内存空间首地址，result指向首地址并强转为obj*返回第一个内存块,之后以n大小(S_round_up(_n)8的倍数)将内存空间划分为一个个内存块，内存块union头部被用来连接内存块，最后一个内存块头部被置空，数组的节点(obj指针)指向第二个内存块头部。
 在allocate函数中，通过内存块的头部去访问下个内存块
@@ -239,7 +239,7 @@ return(__result)
 */
 ~~~
 
-![image-20221002171143655](F:\C-C++linux服务器开发\C++项目\image\image-20221002171143655.png)
+![image-20221002171143655](https://github.com/zhaoyi66/MemPool/blob/main/image/image-20221002171143655.png)
 
 
 
@@ -346,7 +346,7 @@ return(_S_chunk_alloc(__size, __nobjs));
 
 备用内存头部指针域指向数组元素(obj*，即指向另一个内存块头部)，数组元素指向备用内存头部
 
-![image-20221003155402275](F:\C-C++linux服务器开发\C++项目\image\image-20221003155402275.png)
+![image-20221003155402275](https://github.com/zhaoyi66/MemPool/blob/main/image/image-20221003155402275.png)
 
 
 
@@ -377,7 +377,7 @@ if (0 == _S_start_free) {
 //_S_start_free和_S_end_free移动到其他内存空间上，刚好够一个内存块所需空间，__nobjs=1，直接返回，由于是大内存复用给小内存块，所以剩下的内存 算 备用内存，之后会复用给其他内存块
 ~~~
 
-![image-20221003165414813](F:\C-C++linux服务器开发\C++项目\image\image-20221003165414813.png)
+![image-20221003165414813](https://github.com/zhaoyi66/MemPool/blob/main/image/image-20221003165414813.png)
 
 
 
@@ -528,7 +528,7 @@ static void deallocate(void* __p, size_t __n)
 假设1,2号内存块被使用，所以数组元素指向3号内存块
 现在要归还1号内存块，一号内存块的头部指向数组节点指向3号内存块头部，将它们连接起来方便下次再分配，数组节点重新指向1号内存块头部
 
-![image-20221002210205242](F:\C-C++linux服务器开发\C++项目\image\image-20221002210205242.png)
+![image-20221002210205242](https://github.com/zhaoyi66/MemPool/blob/main/image/image-20221002210205242.png)
 
 
 
